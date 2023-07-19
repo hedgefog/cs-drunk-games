@@ -1,0 +1,35 @@
+@BaseClass = Global 
+[ 
+	globalname(string) : "Global Entity Name" 
+]
+
+@BaseClass = Target
+[
+    target(target_destination) : "Target"
+]
+
+@BaseClass = Targetname
+[
+    targetname(target_source) : "Name"
+]
+
+@BaseClass base(Target, Targetname) = Trigger
+[
+	killtarget(target_destination) : "Kill target"
+	netname(target_destination) : "Target Path"
+	master(string) : "Master" 
+	sounds(choices) : "Sound style" : 0 =
+	[
+		0 : "No Sound"
+	]
+	delay(string) : "Delay before trigger" : "0"
+	message(string) : "Message (set sound too!)"
+	spawnflags(flags) = 
+	[
+		1: "Monsters" : 0
+		2: "No Clients" : 0
+		4: "Pushables": 0
+	]
+]
+
+@SolidClass base(Trigger) = trigger_endround : "Trigger: End Round" []
