@@ -145,6 +145,32 @@ public Ham_Base_Touch_Post(pEntity, pTarget) {
     set_pev(pEntity, pev_velocity, vecVelocity);
     set_pev(pEntity, pev_fuser1, get_gametime());
 
+
+    if (IS_PLAYER(pTarget)) {
+        static Float:flForce; flForce = xs_vec_len(vecVelocity) * 0.5;
+
+        static Float:vecOrigin[3];
+        pev(pEntity, pev_origin, vecOrigin);
+
+        static Float:vecTargetOrigin[3];
+        pev(pTarget, pev_origin, vecTargetOrigin);
+
+        static Float:vecDir[3];
+        xs_vec_sub(vecTargetOrigin, vecOrigin, vecDir);
+        xs_vec_normalize(vecDir, vecDir);
+
+        static Float:vecTargetVelocity[3];
+        pev(pTarget, pev_velocity, vecTargetVelocity);
+
+        static Float:flTargetSpeed; flTargetSpeed = xs_vec_len(vecTargetVelocity);
+
+        xs_vec_add_scaled(vecTargetVelocity, vecDir, flForce, vecTargetVelocity);
+        xs_vec_normalize(vecTargetVelocity, vecTargetVelocity);
+        xs_vec_mul_scalar(vecTargetVelocity, floatmax(flTargetSpeed, flForce), vecTargetVelocity);
+
+        set_pev(pTarget, pev_velocity, vecTargetVelocity);
+    }
+
     static Float:flTargetTakeDamage;
     pev(pTarget, pev_takedamage, flTargetTakeDamage);
 
