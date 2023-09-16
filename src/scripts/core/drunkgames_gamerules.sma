@@ -49,6 +49,9 @@ public plugin_init() {
     RegisterHamPlayer(Ham_TakeDamage, "HamHook_Player_TakeDamage_Post", .Post = 1);
     RegisterHamPlayer(Ham_Player_PostThink, "HamHook_Player_PostThink_Post", .Post = 1);
 
+    RegisterHam(Ham_Touch, "func_train", "HamHook_Train_Touch", .Post = 1);
+    RegisterHam(Ham_Touch, "func_tracktrain", "HamHook_Train_Touch", .Post = 1);
+
     g_iFwPlayerWon = CreateMultiForward("DrunkGames_Fw_PlayerWon", ET_IGNORE, FP_CELL, FP_CELL);
     g_iFwPlayerFinished = CreateMultiForward("DrunkGames_Fw_PlayerFinished", ET_IGNORE, FP_CELL, FP_CELL);
     g_iFwRoundEnd = CreateMultiForward("DrunkGames_Fw_RoundEnd", ET_IGNORE, FP_CELL, FP_CELL);
@@ -197,6 +200,12 @@ public HamHook_Player_PostThink_Post(pPlayer) {
     if (is_user_alive(pPlayer)) {
         new bool:bDrunkValue = Round_IsRoundStarted() && !g_rgbIsPlayerFinished[pPlayer];
         @Player_SetDrunk(pPlayer, bDrunkValue);
+    }
+}
+
+public HamHook_Train_Touch(pTrain, pTarget) {
+    if (IS_PLAYER(pTarget)) {
+        ExecuteHamB(Ham_Blocked, pTrain, pTarget);
     }
 }
 
