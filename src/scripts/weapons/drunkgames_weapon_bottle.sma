@@ -104,7 +104,7 @@ public @Weapon_WeaponBoxSpawn(this, pWeaponBox) {
 }
 
 public Float:@Weapon_GetMaxSpeed(this) {
-    return 200.0;
+    return 180.0;
 }
 
 ThrowGrenade(this) {
