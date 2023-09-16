@@ -23,16 +23,10 @@ public plugin_init() {
 
 public plugin_precache() {
     CE_Register(ENTITY_NAME, .preset = CEPreset_Trigger);
-    CE_RegisterHook(CEFunction_Spawn, ENTITY_NAME, "@Entity_Spawn");
     CE_RegisterHook(CEFunction_Activate, ENTITY_NAME, "@Entity_Activate");
 }
 
-public @Entity_Spawn(this) {
-    log_amx("Spawn");
-}
-
 public @Entity_Activate(this, pToucher) {
-    log_amx("Activate %d", pToucher);
     if (!IS_PLAYER(pToucher)) {
         return HAM_IGNORED;
     }
