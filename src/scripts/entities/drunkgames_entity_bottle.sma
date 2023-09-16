@@ -25,7 +25,7 @@ public plugin_precache() {
         .szName = ENTITY_NAME,
         .vMins = Float:{-4.0, -4.0, -4.0},
         .vMaxs = Float:{4.0, 4.0, 4.0},
-        .modelIndex = precache_model(DRUNKGAME_MODEL_WEAPON_BOTTLE_W),
+        .szModel = DRUNKGAME_MODEL_WEAPON_BOTTLE_W,
         .fLifeTime = 10.0
     );
 

@@ -15,19 +15,27 @@
       },
       {
         "name": "cs-modding-kit",
-        "url": "https://github.com/Hedgefog/cs-modding-kit/archive/refs/tags/1.2.0.tar.gz",
+        "url": "https://github.com/Hedgefog/cs-modding-kit/archive/refs/heads/next.zip",
         "strip": 1,
         "filter": [
-          "api_custom_entities.@(sma|inc)",
-          "api_custom_weapons.@(sma|inc)",
-          "api_rounds.@(sma|inc)"
+          "util/**",
+          "api/rounds/**",
+          "api/custom-entities/**",
+          "api/custom-weapons/**",
+          "api/player-dizziness/**"
         ]
       }
     ]
   },
   "input": {
-    "scripts": ["./.thirdparty/cs-modding-kit", "./src/scripts"],
-    "include": ["./.thirdparty/cs-modding-kit/include", "./src/include"],
+    "scripts": [
+      "./.thirdparty/cs-modding-kit",
+      "./src/scripts"
+    ],
+    "include": [
+      "./.thirdparty/cs-modding-kit",
+      "./src/include"
+    ],
     "assets": "./assets"
   },
   "output": {
