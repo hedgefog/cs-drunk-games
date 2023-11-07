@@ -122,7 +122,7 @@ public client_disconnected(pPlayer) {
     RemoveWinner(pPlayer);
 }
 
-public Round_Fw_CheckWinCondition() {
+public Round_Fw_CheckWinConditions() {
     return PLUGIN_HANDLED;
 }
 
