@@ -22,7 +22,7 @@ public plugin_init() {
 }
 
 public plugin_precache() {
-    CE_Register(ENTITY_NAME, .preset = CEPreset_Trigger);
+    CE_Register(ENTITY_NAME, CEPreset_Trigger);
     CE_RegisterHook(CEFunction_Activate, ENTITY_NAME, "@Entity_Activate");
 }
 

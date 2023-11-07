@@ -21,15 +21,11 @@ new g_iCeHandler;
 new g_iGibsModelIndex;
 
 public plugin_precache() {
-    g_iCeHandler = CE_Register(
-        .szName = ENTITY_NAME,
-        .vMins = Float:{-4.0, -4.0, -4.0},
-        .vMaxs = Float:{4.0, 4.0, 4.0},
-        .szModel = DRUNKGAME_MODEL_WEAPON_BOTTLE_W,
-        .fLifeTime = 10.0
-    );
+    precache_model(DRUNKGAME_MODEL_WEAPON_BOTTLE_W);
 
-    CE_RegisterHook(CEFunction_Spawn, ENTITY_NAME, "@Entity_Spawn");
+    g_iCeHandler = CE_Register(ENTITY_NAME);
+    CE_RegisterHook(CEFunction_Init, ENTITY_NAME, "@Entity_Init");
+    CE_RegisterHook(CEFunction_Spawned, ENTITY_NAME, "@Entity_Spawned");
     CE_RegisterHook(CEFunction_Kill, ENTITY_NAME, "@Entity_Kill");
 
     g_iGibsModelIndex = precache_model(DRUNKGAME_MODEL_BOTTLE_GIBS);
@@ -43,7 +39,14 @@ public plugin_init() {
     RegisterHam(Ham_Think, CE_BASE_CLASSNAME, "Ham_Base_Think", .Post = 0);
 }
 
-public @Entity_Spawn(this) {
+@Entity_Init(this) {
+    CE_SetMember(this, CE_MEMBER_LIFETIME, 10.0);
+    CE_SetMemberVec(this, CE_MEMBER_MINS, Float:{-4.0, -4.0, -4.0});
+    CE_SetMemberVec(this, CE_MEMBER_MAXS, Float:{4.0, 4.0, 4.0});
+    CE_SetMemberString(this, CE_MEMBER_MODEL, DRUNKGAME_MODEL_WEAPON_BOTTLE_W);
+}
+
+@Entity_Spawned(this) {
     set_pev(this, pev_solid, SOLID_BBOX);
     set_pev(this, pev_movetype, MOVETYPE_BOUNCE);
     set_pev(this, pev_gravity, 0.5);
@@ -54,7 +57,7 @@ public @Entity_Spawn(this) {
     set_pev(this, pev_nextthink, get_gametime() + 0.1);
 }
 
-public @Entity_Kill(this) {
+@Entity_Kill(this) {
     static Float:vecOrigin[3];
     pev(this, pev_origin, vecOrigin);
 
@@ -92,7 +95,7 @@ public @Entity_Kill(this) {
     emit_sound(this, CHAN_BODY, DRUNKGAME_SOUND_BOTTLE_HIT, 0.5, ATTN_NORM, 0, PITCH_NORM);
 }
 
-public @Entity_Think(this) {
+@Entity_Think(this) {
     static Float:vecOrigin[3];
     pev(this, pev_origin, vecOrigin);
 

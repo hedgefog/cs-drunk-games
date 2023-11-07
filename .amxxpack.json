@@ -3,10 +3,6 @@
     "version": "1.9",
     "addons": ["cstrike"]
   },
-  "include": [
-    "./.compiler/include",
-    "./.thirdparty/reapi/addons/amxmodx/scripting/include"
-  ],
   "thirdparty": {
     "dependencies": [
       {
@@ -27,6 +23,10 @@
       }
     ]
   },
+  "include": [
+    "./.compiler/include",
+    "./.thirdparty/reapi/addons/amxmodx/scripting/include"
+  ],
   "input": {
     "scripts": [
       "./.thirdparty/cs-modding-kit",
