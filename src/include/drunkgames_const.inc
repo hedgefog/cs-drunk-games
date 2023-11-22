@@ -17,5 +17,6 @@ stock const DRUNKGAME_SOUND_BOTTLE_HIT[] = "drunkgames/v090/bottle_break.wav";
 
 stock const DRUNKGAME_SPRITE_HUD[][] = {
     "sprites/640hud2.spr",
-    "sprites/640hud5.spr"
+    "sprites/640hud5.spr",
+    "sprites/drunkgames/v090/640hud1.spr"
 };
