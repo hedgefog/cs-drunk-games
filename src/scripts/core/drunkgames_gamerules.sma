@@ -115,6 +115,7 @@ public bool:Native_IsFreeForAll(iPluginId, iArgc) {
 
 public client_connect(pPlayer) {
     g_rgiPlayerTeam[pPlayer] = 0;
+    g_rgbIsPlayerDrunk[pPlayer] = false;
     CheckWinConditions();
 }
 
