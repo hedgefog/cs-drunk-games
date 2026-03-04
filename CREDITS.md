@@ -1,3 +1,2 @@
-# Credits
-- __Nexon Co., Ltd__ and __rofleni_chips__ for bottle model
-
+- __Nexon Co., Ltd__ and __rflmm__ - bottle model
+- __noNameCat__ - `drunkgames_lviv` map

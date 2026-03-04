@@ -4,11 +4,10 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/hedgefog/cs-drunk-games)
 ![GitHub all releases](https://img.shields.io/github/downloads/hedgefog/cs-drunk-games/total)
 
+*Built with [📦 AMXXPack](https://github.com/Hedgefog/node-amxxpack) and [🛠️ AMXX Modding Kit](https://github.com/Hedgefog/amxx-modding-kit)*
+
 ### 📄 About
 __Drunk Games__ is a __Counter-Strike__ server-side modification where drunk players have to race the map in the fight for first place.
-
-### Setup
-To enable __Race Mode__ use `mp_freeforall` cvar. 
 
 ### 🔽 Download latest:
 - [Releases](../../releases)

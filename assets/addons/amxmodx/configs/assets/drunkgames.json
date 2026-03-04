@@ -1,0 +1,26 @@
+{
+  "weapons": {
+    "bottle": {
+      "model": {
+        "view": "models/drunkgames/v100/weapons/v_bottle.mdl",
+        "player": "models/drunkgames/v100/weapons/p_bottle.mdl",
+        "world": "models/drunkgames/v100/weapons/w_bottle.mdl"
+      }
+    }
+  },
+  "entities": {
+    "bottle": {
+      "gibs": "models/drunkgames/v100/gibs_bottle.mdl",
+      "sounds": {
+        "break": "drunkgames/v100/bottle_break.wav"
+      }
+    }
+  },
+  "notifications": {
+    "sounds": {
+      "finished": "events/enemy_died.wav",
+      "win": "events/task_complete.wav",
+      "roundend": "ambience/goal_1.wav"
+    }
+  }
+}

@@ -1,17 +1,17 @@
 {
   "name": "drunkgames",
-  "version": "0.9.0",
-  "description": "Drunk Games Mod",
+  "version": "1.0.0",
+  "author": "Hedgehog Fog",
+  "description": "CS Drunk Games Mod",
   "scripts": {
     "build": "amxxpack build",
     "watch": "amxxpack build --watch",
     "postinstall": "amxxpack install",
     "pack": "gulp"
   },
-  "author": "AMXXPack",
   "license": "MIT",
   "devDependencies": {
-    "amxxpack": "^1.4.7",
+    "amxxpack": "^1.5.1",
     "gulp": "^4.0.2",
     "gulp-file": "^0.4.0",
     "gulp-zip": "^5.0.2",

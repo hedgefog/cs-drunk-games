@@ -7,7 +7,7 @@ DRUNKGAMES_NO_ONE_FINISHED = Round draw! No one finished the map.
 DRUNKGAMES_PLAYER_TOOK_PLACE = Player ^3%n^1 finished and took ^4%dnd^1 place.
 DRUNKGAMES_PLAYER_BROUGHT_TEAM_VICTORY = Player ^3%n^1 finished and brought victory to the team.
 
-[ua]
+[uk]
 DRUNKGAMES_PLAYER_FINISHED_AND_WIN = Гравець ^3%n^1 фінішував і виграв гру!
 DRUNKGAMES_PLAYER_SURVIVED_AND_WIN = Гравець ^3%n^1 вижив і виграв гру!
 DRUNKGAMES_ALL_PLACES_TAKEN = Всі місця зайняті! Переможці: %s.

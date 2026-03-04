@@ -10,12 +10,13 @@
 native DrunkGames_GetWinnerNum();
 native DrunkGames_GetMaxWinners();
 native DrunkGames_GetWinner(iPlace);
-native DrunkGames_AddWinner(pPlayer);
-native DrunkGames_RemoveWinner(pPlayer);
-native DrunkGames_Player_IsFinished(pPlayer);
+native DrunkGames_AddWinner(const pPlayer);
+native DrunkGames_RemoveWinner(const pPlayer);
+native DrunkGames_Player_IsFinished(const pPlayer);
 native bool:DrunkGames_IsFreeForAll();
+native bool:DrunkGames_CanPlayerTakeDamage(const pPlayer, const pAttacker);
 
-forward DrunkGames_Fw_ConfigLoaded();
-forward DrunkGames_Fw_PlayerFinished(pPlayer, iPlace);
-forward DrunkGames_Fw_PlayerWon(pPlayer, iPlace);
-forward DrunkGames_Fw_RoundEnd(iTeam, bool:bFinished);
+forward DrunkGames_OnConfigLoaded();
+forward DrunkGames_OnPlayerFinished(const pPlayer, const iPlace);
+forward DrunkGames_OnPlayerWon(const pPlayer, iPlace);
+forward DrunkGames_OnRoundEnd(iTeam, bool:bFinished);
