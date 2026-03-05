@@ -6,7 +6,7 @@
 
 stock const DRUNKGAMES_LIBRARY[] = "drunkgames";
 stock const DRUNKGAMES_TITLE[] = "Drunk Games";
-stock const DRUNKGAMES_VERSION[] = "1.0.0";
+stock const DRUNKGAMES_VERSION[] = "1.0.1";
 
 /*--------------------------------[ Entities ]--------------------------------*/
 
