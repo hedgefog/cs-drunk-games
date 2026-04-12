@@ -1,3 +1,13 @@
+/*
+  1.0.2
+    Fixes:
+      Fixed Amx Mod X 1.10 compatibility
+
+  1.0.1
+    Common:
+      Updated AMXX Modding Kit
+*/
+
 #if defined _drunkgames_included
   #endinput
 #endif
